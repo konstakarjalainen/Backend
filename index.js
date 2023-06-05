@@ -41,7 +41,7 @@ app.get('/api/persons', (req, res) => {
 })
 
 app.get('/api/persons/:id', (req, res, next) => {
-	Person.find(req.params.id).then(person => {
+	Person.findById(req.params.id).then(person => {
 		if (person) {
 			res.json(person)
 		} else {
